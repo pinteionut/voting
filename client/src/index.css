@@ -1,0 +1,16 @@
+.img-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: url("public/vote.jpeg") no-repeat;
+  background-size: cover;
+}
+
+.form-container {
+  margin: auto;
+  width: 25%;
+  padding: 20px;
+  transform: translateY(100px);
+  background: radial-gradient(#554343, transparent);
+  border-radius: 10%;
+}
