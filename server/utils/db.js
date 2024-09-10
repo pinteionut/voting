@@ -3,30 +3,23 @@ import Sequelize from "sequelize";
 let sequelize = null;
 
 export const getSequelize = () => {
-
-  if(sequelize) {
-    return sequelize
+  if (sequelize) {
+    return sequelize;
   } else {
-    sequelize = new Sequelize(
-      'voting',
-      'root',
-      'Password#1',
-       {
-         host: 'localhost',
-         dialect: 'mysql'
-       }
-     );
+    sequelize = new Sequelize("voting", "root", "", {
+      host: "localhost",
+      dialect: "mysql",
+    });
 
-     return sequelize;
+    return sequelize;
   }
+};
 
-}
-
-export async function connectDB () {
+export async function connectDB() {
   try {
-    await getSequelize().authenticate()
-    console.log('Connection has been established successfully.');
+    await getSequelize().authenticate();
+    console.log("Connection has been established successfully.");
   } catch (e) {
-    console.error('Unable to connect to the database: ', e);
+    console.error("Unable to connect to the database: ", e);
   }
 }
